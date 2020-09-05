@@ -1,5 +1,7 @@
 package com.headfirstjava;
 
+import java.util.Arrays;
+
 public class SimpleDotComTestDrive {
     public static void main(String[] args) {
         int numberOfGuesses = 0;
@@ -13,10 +15,10 @@ public class SimpleDotComTestDrive {
         boolean isAlive = true;
 
         while (isAlive) {
-            int guess = helper.getUserInputNum("enter a number");
+            int guess = helper.getUserInputNum("enter a number[0, 6]");
             String result = dot.checkYourself(guess);
             numberOfGuesses++;
-            System.out.printf("%s on %s count %d\n", result, guess, dot.getNumberOfHits());
+            System.out.printf("%s on %s No.%d\n", result, guess, dot.getNumberOfHits());
 
             if (result.equals("kill")) {
                 isAlive = false;

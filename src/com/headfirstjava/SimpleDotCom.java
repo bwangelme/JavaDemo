@@ -1,15 +1,13 @@
 package com.headfirstjava;
 
+import java.util.ArrayList;
+
 class SimpleDotCom {
-    private int[] locationCells;
+    private ArrayList<Integer> locationCells;
     private int numberOfHits;
-    private int botLen;
 
     SimpleDotCom() {
-        this.locationCells = new int[7];
-        for (int i = 0; i < this.locationCells.length; i++) {
-            locationCells[i] = 0;
-        }
+        this.locationCells = new ArrayList<>();
     }
 
     int getNumberOfHits() {
@@ -18,25 +16,20 @@ class SimpleDotCom {
 
     void setLocationCells(int[] locations) {
         for (int idx : locations) {
-            this.locationCells[idx] = 1;
+            this.locationCells.add(idx);
         }
-        this.botLen = locations.length;
     }
 
-    String checkYourself(int guess) {
-        if (guess < 0 || guess >= this.locationCells.length) {
-            return "failed";
-        }
-
-        int guessCell = this.locationCells[guess];
+    String checkYourself(Integer guess) {
+        boolean exist = this.locationCells.contains(guess);
         String result = "miss";
-        if (guessCell == 1) {
+        if (exist) {
             result = "hit";
-            this.locationCells[guess] = 0;
+            this.locationCells.remove(guess);
             this.numberOfHits++;
         }
 
-        if (this.numberOfHits == this.botLen) {
+        if (this.locationCells.isEmpty()) {
             result = "kill";
         }
 
