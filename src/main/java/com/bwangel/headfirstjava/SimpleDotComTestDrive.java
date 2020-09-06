@@ -1,6 +1,4 @@
-package com.headfirstjava;
-
-import java.util.Arrays;
+package com.bwangel.headfirstjava;
 
 public class SimpleDotComTestDrive {
     public static void main(String[] args) {

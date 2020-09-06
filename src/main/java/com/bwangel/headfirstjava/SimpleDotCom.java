@@ -1,4 +1,4 @@
-package com.headfirstjava;
+package com.bwangel.headfirstjava;
 
 import java.util.ArrayList;
 
