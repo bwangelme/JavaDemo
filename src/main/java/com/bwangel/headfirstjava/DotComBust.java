@@ -22,6 +22,7 @@ public class DotComBust {
 
         for (DotCom dotCom : this.dotComList) {
             ArrayList<String> newLocation = this.board.getRandomCoordinate(3);
+            System.out.println(newLocation);
             dotCom.setLocationCells(newLocation);
         }
     }
